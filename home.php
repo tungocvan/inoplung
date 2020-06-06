@@ -23,22 +23,22 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-			<a class="page-scroll" href="#page-top">Home</a>
+			<a class="page-scroll" href="#page-top">Trang chủ</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#about">About</a>
+			<a class="page-scroll" href="#about">Giới thiệu</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#services">Services</a>
+			<a class="page-scroll" href="#services">Dịch vụ</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#portfolio">Work</a>
+			<a class="page-scroll" href="#portfolio">Bộ sưu tập</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#pricing">Pricing</a>
+			<a class="page-scroll" href="#pricing">Báo giá</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#contact">Contact</a>
+			<a class="page-scroll" href="#contact">Liên hệ</a>
 			</li>
 		</ul>
 	</div>
