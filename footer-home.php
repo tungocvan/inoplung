@@ -4,9 +4,9 @@
 <div class="container">
 <div class="row">
 	<div class="col-md-12 text-center">
-		<h1 class="bottombrand wow flipInX">Dayana</h1>
+		<h1 class="bottombrand wow flipInX">MAIGIA</h1>
 		<p>
-			&copy; 2017 Bootstrap HTML Template by devTemplate.xyz
+			&copy; 2020 - In ốp lưng chuyên nghiệp 
 		</p>
 	</div>
 </div>
