@@ -1,47 +1,55 @@
+<?php
+	$data = getPostCateSlug('Banner Slider');
+	$dem = count($data);
+?>
 <!-- Section Intro Slider
-================================================== -->
+================================================== 
+-->
 <div id="carousel-example-generic" class="carousel intro slide">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
-		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		<?php 
+			for($i=0;$i<$dem;$i++){
+				if($i==0){
+					echo "<li data-target='#carousel-example-generic' data-slide-to='0' class='active'></li>";
+				}else{
+					echo "<li data-target='#carousel-example-generic' data-slide-to='{$i}'></li>";
+				}
+			}
+		?>
 	</ol>
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		<!-- First slide -->
-		<div class="item active" style="background-image:url(https://devtemplate.xyz/demo/images/dayana/s1-min.jpg)">
-			<div class="carousel-caption">
-				<h2 data-animation="animated bounceInDown">
-				In ốp lưng điện thoại chất lượng cao </h2>
-				<h1 data-animation="animated bounceInUp">
-				MAI GIA </h1>
-				<a href="#" class="btn btn-ghost btn-lg" data-animation="animated fadeInLeft">Start Tour</a><a href="#" class="btn btn-primary btn-lg" data-animation="animated fadeInRight">Learn More</a>
-			</div>
-		</div>
-		<!-- /.item -->
-		<!-- Second slide -->
-		<div class="item" style="background-image:url(https://devtemplate.xyz/demo/images/dayana/s2-min.jpg)">
-			<div class="carousel-caption">
-				<h2 data-animation="animated zoomInLeft">
-				Responsive HTML Template </h2>
-				<h1 data-animation="animated zoomInRight">
-				Bootstrap Theme </h1>
-				<a href="#" class="btn btn-ghost btn-lg" data-animation="animated bounceIn">Start Tour</a><a href="#" class="btn btn-primary btn-lg" data-animation="animated bounceIn">Learn More</a>
-			</div>
-		</div>
-		<!-- /.item -->
-		<!-- Third slide -->
-		<div class="item" style="background-image:url(https://devtemplate.xyz/demo/images/dayana/s3-min.jpg)">
-			<div class="carousel-caption">
-				<h2 data-animation="animated bounceInLeft">
-				Dayana by DevTemplate</h2>
-				<h1 data-animation="animated bounceInRight">
-				Happy Coding</h1>
-				<a href="#" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Start Tour</a><a href="#" class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Learn More</a>
-			</div>
-		</div>
-		<!-- /.item -->
+		<?php 
+			foreach($data as $key => $value){
+				if($key == 0 ){
+					echo "
+						<div class='item active' style='background-image:url({$value['img']})'>
+							<div class='carousel-caption'>
+								<h2 data-animation='animated bounceInDown'>
+								{$value['title']}</h2>
+								<h1 data-animation='animated bounceInUp'>
+								MAI GIA <?php echo $dem; ?></h1>
+								<a href='#' class='btn btn-ghost btn-lg' data-animation='animated fadeInLeft'>Start Tour</a><a href='#' class='btn btn-primary btn-lg' data-animation='animated fadeInRight'>Learn More</a>
+							</div>
+						</div>
+						";
+				}else{
+					echo "
+					<div class='item' style='background-image:url({$value['img']})'>
+					<div class='carousel-caption'>
+						<h2 data-animation='animated zoomInLeft'>
+						{$value['title']}</h2>
+						<h1 data-animation='animated zoomInRight'>
+						Bootstrap Theme </h1>
+						<a href='#' class='btn btn-ghost btn-lg' data-animation='animated bounceIn'>Start Tour</a><a href='#' class='btn btn-primary btn-lg' data-animation='animated bounceIn'>Learn More</a>
+					</div>
+					</div>
+					";
+				}
+				
+			}
+		?>
 	</div>
 	<!-- /.carousel-inner -->
 	<!-- Controls (currently displayed none from style.css)-->

@@ -1,3 +1,24 @@
+<?php
+function menu_route($menuname){
+    $menu_items = wp_get_nav_menu_items($menuname); 
+    $menu = array();
+   foreach ($menu_items as $item ){
+ 
+     $menuItem = array(
+         "id"=>$item->ID,
+         "menu_order"=>$item->menu_order,
+         "title"=>$item->title,
+         "dom_id"=>preg_replace('/[^a-z]+/i',"_",$item->title),
+         "menu_item_parent" => $item->menu_item_parent,
+         "url"=>$item->url
+     );
+     array_push($menu,$menuItem);
+   }
+   return $menu; 
+}
+$menu = menu_route('menu-top');	
+//var_dump($menu);
+?>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 <div class="container">
 	<!-- Brand and toggle get grouped for better mobile display -->
@@ -13,24 +34,17 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav navbar-right">
-			<li>
-			<a class="page-scroll" href="#page-top">Trang chủ</a>
-			</li>
-			<li>
-			<a class="page-scroll" href="#about">Giới thiệu</a>
-			</li>
-			<li>
-			<a class="page-scroll" href="#services">Dịch vụ</a>
-			</li>
-			<li>
-			<a class="page-scroll" href="#portfolio">Bộ sưu tập</a>
-			</li>
-			<li>
-			<a class="page-scroll" href="#pricing">Báo giá</a>
-			</li>
-			<li>
-			<a class="page-scroll" href="#contact">Liên hệ</a>
-			</li>
+			<?php  
+				foreach($menu as $key => $value){
+					echo "
+					<li>
+					<a class='page-scroll' href='{$value['url']}'>{$value['title']}</a>
+					</li>
+					";
+				}
+			?>
+			
+			
 		</ul>
 	</div>
 	<!-- /.navbar-collapse -->

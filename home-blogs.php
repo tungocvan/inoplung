@@ -1,9 +1,8 @@
 <?php
 /**
  * The main template file
- * Template Name: home-template
+ * Template Name: home-blog-template
  */
- require_once('home/my-functions.php'); 
  define( 'TNV_CSS', get_template_directory_uri());
  get_header('home');
 ?>
@@ -12,7 +11,7 @@
 	require_once('home/nav.php'); 
 	require_once('home/slider.php'); 
 	require_once('home/about.php'); 
-	// require_once('home/after-about.php'); 
+	require_once('home/after-about.php'); 
 	require_once('home/services.php'); 
 	require_once('home/portfolio.php'); 
 	require_once('home/team.php'); 

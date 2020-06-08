@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="author" content="">
-<title>Dayana - Responsive Landing Page</title>
+<meta name="author" content=""> 
+<title>Mai Gia - In ốp lưng điện thoại chất lượng cao</title>
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="<?php echo TNV_CSS;?>/css/bootstrap.min.css" type="text/css">
 <!-- Custom Fonts -->
